@@ -7,7 +7,7 @@
 
 
 
-      <li class="nav-item menu-items">
+      {{-- <li class="nav-item menu-items">
         <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
           <span class="menu-icon">
             <i class="mdi mdi-laptop"></i>
@@ -22,11 +22,11 @@
             <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li>
           </ul>
         </div>
-      </li>
+      </li> --}}
 
 
 
-
+      @if (Auth::user()->role === 'admin')
       <li class="nav-item menu-items">
         <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
           <span class="menu-icon">
@@ -45,13 +45,37 @@
           </ul>
         </div>
       </li>
+      @endif
+
+      @if (Auth::user()->role === 'employee')
       <li class="nav-item menu-items">
-        <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
+        <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
+          <span class="menu-icon">
+            <i class="mdi mdi-security"></i>
+          </span>
+          <span class="menu-title">Employee</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="auth">
+          <ul class="nav flex-column sub-menu">
+
+            <li class="nav-item"> <a class="nav-link" href="{{ route('allCustomer') }}">Custorme </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('allAction') }}"> Action </a></li>
+            <li class="nav-item"> <a class="nav-link" href="{{ route('loginForm') }}"> Logout</a></li>
+            <li class="nav-item"> <a class="nav-link" href="pages/samples/register.html">  </a></li>
+          </ul>
+        </div>
+      </li>
+      @endif
+
+
+      <li class="nav-item menu-items">
+        {{-- <a class="nav-link" href="http://www.bootstrapdash.com/demo/corona-free/jquery/documentation/documentation.html">
           <span class="menu-icon">
             <i class="mdi mdi-file-document-box"></i>
           </span>
-          <span class="menu-title">Documentation</span>
-        </a>
+
+        </a> --}}
       </li>
     </ul>
   </nav>
