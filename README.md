@@ -64,9 +64,3 @@ Laravel Blade templating engine
 Email: mohamedabdo2002815@gmail.com
 
 GitHub: https://github.com/m77mdabdo/CRM.git
-
-
-نسخ
-تحرير
-
-
